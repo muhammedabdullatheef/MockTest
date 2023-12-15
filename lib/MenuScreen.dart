@@ -11,18 +11,24 @@ class MenuScreen extends StatefulWidget {
   @override
   State<MenuScreen> createState() => _MenuScreenState();
 }
-Future<MockModelClass> TodayMeals() async {
-  var res = await http.get(
-      Uri.parse("https://www.themealdb.com/api/json/v1/1/search.php?f=b"));
-  print(res);
-  if (res.statusCode == 200) {
-    var img = MockModelClass.fromJson(jsonDecode(res.body));
-    return img;
-  } else {
-    throw Exception("404 Error");
-  }
-}
 class _MenuScreenState extends State<MenuScreen> {
+  Future<MockModelClass> TodayMeals() async {
+    var res = await http.get(
+        Uri.parse("https://www.themealdb.com/api/json/v1/1/search.php?f=b"));
+    print(res);
+    if (res.statusCode == 200) {
+      var img = MockModelClass.fromJson(jsonDecode(res.body));
+      return img;
+    } else {
+      throw Exception("404 Error");
+    }
+  }
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    MockModelClass();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

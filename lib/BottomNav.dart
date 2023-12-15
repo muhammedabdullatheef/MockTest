@@ -36,22 +36,23 @@ class _UserBottomNavState extends State<UserBottomNav> {
                 size: 30,
                 color: Colors.black38,
               ),
-              label: ""),
+              label: "Menu"),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home_filled,
                 size: 30,
                 color: Colors.black38,
               ),
-              label: ""),
+              label: "Home"),
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.account_circle,
                 size: 30,
                 color: Colors.black38,
               ),
-              label: ""),
+              label: "Profile"),
         ],
+        selectedItemColor: Colors.orangeAccent,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {
@@ -71,3 +72,5 @@ class _UserBottomNavState extends State<UserBottomNav> {
     );
   }
 }
+
+
